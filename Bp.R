@@ -25,6 +25,9 @@ bp.means=aggregate(bp,by=list(diet,biofeed,drug), FUN=mean)
 names(bp.means)=c("diet.m","biofeed.m","drug.m","bp.m")
 attach(bp.means)
 
+#----------------------------------------------
+# 7. Graph the means in a profile plot
+#----------------------------------------------
 plot(c(1,2,3),bp.m[(diet.m=="n")&(biofeed.m=="n")], type="o",lty=1,pch=1,cex=1.5, ylim=c(160,210), xlab="drug",ylab="blood pressure", xaxt="n")
 Axis(at = c(1,2,3), side = 1,labels=c("a","b","c"))
 points(c(1,2,3),bp.m[(diet.m=="y")&(biofeed.m=="n")], type="o",lty=1,pch=0)
